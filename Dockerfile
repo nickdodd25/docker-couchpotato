@@ -26,6 +26,7 @@ RUN \
 	apk add --no-cache --virtual=build-dependencies \
 		git \
 		python \
+		pip \
 		geoip 
 
 RUN \
