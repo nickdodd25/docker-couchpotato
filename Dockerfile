@@ -41,6 +41,9 @@ RUN \
 		py2-pip \
 		python2-dev \
 		py2-lxml \
+		libffi-dev \
+		libpng-dev \
+		libwebp-dev \
 		geoip 
 
 RUN \
