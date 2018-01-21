@@ -44,6 +44,8 @@ RUN \
 		libffi-dev \
 		libpng-dev \
 		libwebp-dev \
+		openjpeg-dev \
+		openssl-dev \
 		geoip 
 
 RUN \
