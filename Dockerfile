@@ -27,6 +27,7 @@ RUN \
 		git \
 		g++ \
 		gcc \
+		make \
 		libressl2.6-libssl \
 		openssl
 
