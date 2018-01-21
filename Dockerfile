@@ -26,7 +26,9 @@ RUN \
 	apk add --no-cache --virtual=build-dependencies \
 		git \
 		g++ \
-		gcc
+		gcc \
+		libressl2.6-libssl \
+		openssl \
 
 RUN \
 	echo "Runtime Packages" && \
