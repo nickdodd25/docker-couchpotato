@@ -25,11 +25,8 @@ RUN \
 	echo "Build dependencies" && \
 	apk add --no-cache --virtual=build-dependencies \
 		git \
-		python2 \
-		py2-pip \
-		python2-dev \
-		py2-lxml \
-		geoip 
+		g++ \
+		gcc
 
 RUN \
 	echo "Runtime Packages" && \
@@ -37,7 +34,12 @@ RUN \
 		tzdata \
 		curl \
 		unrar \
-		unzip
+		unzip \
+		python2 \
+		py2-pip \
+		python2-dev \
+		py2-lxml \
+		geoip 
 
 RUN \
 	 echo "**** install pip packages ****" && \
