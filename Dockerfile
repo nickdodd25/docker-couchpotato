@@ -28,7 +28,7 @@ RUN \
 		g++ \
 		gcc \
 		libressl2.6-libssl \
-		openssl \
+		openssl
 
 RUN \
 	echo "Runtime Packages" && \
