@@ -25,8 +25,10 @@ RUN \
 	echo "Build dependencies" && \
 	apk add --no-cache --virtual=build-dependencies \
 		git \
-		python \
+		python2 \
 		py2-pip \
+		python2-dev \
+		py2-lxml \
 		geoip 
 
 RUN \
