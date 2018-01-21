@@ -44,15 +44,19 @@ RUN \
 RUN \
 	 echo "**** install pip packages ****" && \
 	 pip install --no-cache-dir -U \
-		incremental \
-		crypto \
-		mako \
-		markupsafe \
+		cheetah \
+		configparser \
+		ndg-httpsclient \
+		notify \
+		paramiko \
+		pillow \
+		psutil \
 		pyopenssl \
-		service_identity \
-		six \
-		twisted \
-		zope.interface
+		requests \
+		setuptools \
+		urllib3 \
+		virtualenv \
+		incremental
 
 RUN \
 	echo "Clean up clean up everybody do your share." && \
