@@ -28,17 +28,18 @@ RUN \
 		python \
 		openssl \
 		bash
-RUN \
-	echo "Clean up clean up everybody do your share." && \
-	rm -rf /root/.cache
 
 RUN mkdir /opt && \
   cd /opt && \
   git clone https://github.com/CouchPotato/CouchPotatoServer.git
 
-RUN groupmod -g 1000 users \
-	&& useradd -u 911 -U -d /config -s /bin/false abc \
-	&& usermod -G users abc
+RUN \
+	echo "Clean up clean up everybody do your share." && \
+	rm -rf /root/.cache
+
+RUN groupmod -g 1000 users
+RUN useradd -u 911 -U -d /config -s /bin/false abc 
+RUN usermod -G users abc
 
 EXPOSE 5050
 VOLUME /config /downloads
