@@ -27,7 +27,8 @@ RUN \
 		git \
 		python \
 		openssl \
-		bash
+		bash \
+		coreutils
 
 RUN mkdir /opt && \
   cd /opt && \
