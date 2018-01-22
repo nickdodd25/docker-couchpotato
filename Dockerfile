@@ -23,7 +23,7 @@ RUN \
 
 RUN \
 	echo "Build dependencies" && \
-	apk add --no-cache --virtual=build-dependencies \
+	apk add --no-cache \
 		git \
 		python \
 		openssl
@@ -31,8 +31,6 @@ RUN \
 
 RUN \
 	echo "Clean up clean up everybody do your share." && \
-	apk del --purge \
-		build-dependencies && \
 	rm -rf \
 		/root/.cache
 
