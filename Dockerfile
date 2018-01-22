@@ -26,17 +26,15 @@ RUN \
 	apk add --no-cache \
 		git \
 		python \
-		openssl
-
-
+		openssl \
+		bash
 RUN \
 	echo "Clean up clean up everybody do your share." && \
-	rm -rf \
-		/root/.cache
+	rm -rf /root/.cache
 
 RUN mkdir /opt && \
   cd /opt && \
-  git clone https://github.com/RuudBurger/CouchPotatoServer.git
+  git clone https://github.com/CouchPotato/CouchPotatoServer.git
 
 RUN groupmod -g 1000 users \
 	&& useradd -u 911 -U -d /config -s /bin/false abc \
