@@ -25,46 +25,9 @@ RUN \
 	echo "Build dependencies" && \
 	apk add --no-cache --virtual=build-dependencies \
 		git \
-		g++ \
-		gcc \
-		make \
-		libressl2.6-libssl \
+		python \
 		openssl
 
-RUN \
-	echo "Runtime Packages" && \
-	apk add --no-cache \
-		tzdata \
-		curl \
-		unrar \
-		unzip \
-		python2 \
-		py2-pip \
-		python2-dev \
-		py2-lxml \
-		libffi-dev \
-		libpng-dev \
-		libwebp-dev \
-		openjpeg-dev \
-		openssl-dev \
-		geoip 
-
-RUN \
-	 echo "**** install pip packages ****" && \
-	 pip install --no-cache-dir -U \
-		cheetah \
-		configparser \
-		ndg-httpsclient \
-		notify \
-		paramiko \
-		pillow \
-		psutil \
-		pyopenssl \
-		requests \
-		setuptools \
-		urllib3 \
-		virtualenv \
-		incremental
 
 RUN \
 	echo "Clean up clean up everybody do your share." && \
