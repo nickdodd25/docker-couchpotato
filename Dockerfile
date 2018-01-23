@@ -5,22 +5,6 @@ MAINTAINER nickd25
 RUN apk update
 RUN apk upgrade
 
-ARG Puid="911"
-ARG Pgid="911"
-
-ENV PGID=$Pgid
-ENV PUID=$Puid
-
-
-# s6 overlay
-RUN \
-	echo "Install the s6 overlay" && \
-	apk add --no-cache ca-certificates wget bash \
-	&& wget https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.2/s6-overlay-amd64.tar.gz -O /tmp/s6-overlay.tar.gz \
-	&& tar xvfz /tmp/s6-overlay.tar.gz -C / \
-	&& rm -f /tmp/s6-overlay.tar.gz 
-
-
 RUN \
 	echo "Build dependencies" && \
 	apk add --no-cache \
@@ -41,14 +25,10 @@ RUN \
 
 WORKDIR /opt
 
-RUN groupmod -g 1000 users
-RUN useradd -u 911 -U -d /config -s /bin/false abc 
-RUN usermod -G users abc
-
 EXPOSE 5050
 VOLUME /config /downloads /logs /torrents
 
 # root filesystem
-COPY root /
+#COPY root /
 
-ENTRYPOINT [ "/init" ]
+ENTRYPOINT ["python", "CouchPotatoServer/CouchPotato.py"]
