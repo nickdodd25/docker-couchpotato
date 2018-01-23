@@ -39,12 +39,14 @@ RUN \
 	echo "Clean up clean up everybody do your share." && \
 	rm -rf /root/.cache
 
+WORKDIR /opt
+
 RUN groupmod -g 1000 users
 RUN useradd -u 911 -U -d /config -s /bin/false abc 
 RUN usermod -G users abc
 
 EXPOSE 5050
-VOLUME /config /downloads
+VOLUME /config /downloads /logs /torrents
 
 # root filesystem
 COPY root /

@@ -2,6 +2,6 @@
 
 # permissions
 chown -R abc:abc \
-	/config
+	/opt/config
 chown abc:abc \
-	/downloads
+	/opt/downloads
