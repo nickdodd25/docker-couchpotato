@@ -28,7 +28,8 @@ RUN \
 		python \
 		openssl \
 		bash \
-		coreutils
+		coreutils \
+		shadow
 
 RUN mkdir /opt && \
   cd /opt && \
